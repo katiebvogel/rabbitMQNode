@@ -1,4 +1,6 @@
-## This project contains javascript files from 
+## Getting started with RabbitMQ with Node
+
+#### This project contains javascript files from 
 https://github.com/rabbitmq/rabbitmq-tutorials 
 
 ### To get started: 
@@ -25,6 +27,7 @@ The producer sends a single message to a named queue, while the consumer receive
 ### Example Two: "Work Queues":
 This example demonstrates how you can set up multiple consumers to run more complex tasks (simply simulated by a setTimeout()). If all the workers are busy, the tasks will keep adding to the queue.
 This setup utilizes manual acknowledgement mode. and "The durability options let the tasks survive even if RabbitMQ is restarted."
+
 ``` node new_task.js "This task takes two seconds.." ```
 
 Or
@@ -74,6 +77,7 @@ See comments in file for more examples
 
 ### Example Six: "RPC":
 Remote Procedure Call (running a function on a remote computer and waiting for a result). This example uses a fibonacci calculator function for the remote procedure.
+
 We want to correlate specific requests with specific responses. So we include a *correlation_id* . We also indicate a *reply_to* property from the client in the request message, so the server/RPC worker knows which queue to send the response back to.
 
 ``` node rpc_server.js ```
